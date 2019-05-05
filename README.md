@@ -13,9 +13,11 @@ This Dockerfile is based on the repo (https://github.com/wkumari/dprive-nginx-bi
 
 ### Build docker image
 1. Create a self-signed key pair and put them in a folder
+
 	mkdir certs
 	openssl req -new -newkey rsa:4096 -x509 -sha256 -days 400 -nodes -out MyCert.crt -keyout MyKey.key 
 2. Build the image
+
 	(cd to the directory where Dockerfile is located)
 	docker build -t dot .
 
