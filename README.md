@@ -31,19 +31,5 @@ Start:
     docker run -itd --restart always -p 853:853/tcp -v $PWD:/etc/nginx/certificates dot
    
 ##### Sample client side 'stubby.yml' file that can work with this containerized DNS over TLS server (Assuming server IP is 2.3.4.5)
-resolution_type: GETDNS_RESOLUTION_STUB
-dns_transport_list:
-  - GETDNS_TRANSPORT_TLS
-tls_authentication: GETDNS_AUTHENTICATION_NONE
-tls_query_padding_blocksize: 128
 
-edns_client_subnet_private : 1
-idle_timeout: 10000
-listen_addresses:
-  - 127.0.0.1@5453
-
-round_robin_upstreams: 0
-
-upstream_recursive_servers:
-  - address_data: 2.3.4.5
- 
+	Refer to the 'files/stubby.yml' file . 
